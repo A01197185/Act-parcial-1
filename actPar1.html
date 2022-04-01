@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <meta charset = "UTF-8">
+        <title>Actividad parcial 1</title>
+        <p>Diego Alejandro Rodríguez A01197185</p>
+    </head>
+    <body>
+        <div id="app"> Esta es una pagina sobre mis  {{app}} </div>
+        <main>
+            <div id="inputs">
+                <br>
+                <input v-model="message" placeholder="inserta tu nombre aqui" />
+                <p v-if="message">Hola {{ message }}!</p>
+            </div>
+            <br>
+            <div id="p5">
+                <button class="btn btn-primary" v-on:click="spoilers = !spoilers">Mostrar</button>
+            
+                <p v-if="spoilers">Mis hobbies son los siguientes</p>
+                <ol v-if="spoilers">
+                    <li v-for="msg in bucl">
+                      {{ msg.hobies }}
+                    </li>
+                </ol>
+              </div>
+        </main>
+        <footer>
+            <div id="imag">
+                <br>
+                 {{desc}}
+                 <div> 
+                  <img style="width:150px;height:150px" v-bind:src="imag" aria-label="VueJS logo">
+                 </div>
+                 <br>
+             </div>
+        </footer>
+        <script src="actParcial1.js"></script>
+    </body>
