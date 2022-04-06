@@ -5,32 +5,38 @@ const p5 = Vue.createApp({
             europa: false,
             asia: false,
             oceania: false,
-            r1: 'Norte America',
-            r2: 'Europa',
+            r1: 'North America',
+            r2: 'Europe',
             r3: 'Asia',
             r4: 'Oceania',
             bucl1:[
                 { paises:"Canada" },
-                { paises:"Estados Unidos" },
+                { paises:"United States" },
                 { paises:'Mexico' },
             ],
             bucl2:[
-                { paises:"Alemania" },
-                { paises:"Francia" },
+                { paises:"Germany" },
+                { paises:"France" },
                 { paises:'Portugal' },
             ],
             bucl3:[
                 { paises:"China" },
                 { paises:"Korea" },
-                { paises:'Japon' },
+                { paises:'Japan' },
             ],
             bucl4:[
                 { paises:"Australia" },
-                { paises:"Nueva Zelanda" },
+                { paises:"New Zealand" },
                 { paises:'Fiji' },
             ]
         }
+    },
+    methods: {
+        rnA(){
+            nA = !nA
+        }
     }
+
 });
 p5.mount('#p5')
 
@@ -42,3 +48,10 @@ const inputs = Vue.createApp({
     }
  });
  inputs.mount('#inputs')
+
+const ej6 = Vue.createApp({
+    mounted(){
+        var today = new Date();
+        this.$refs.p.textContent = 'Todays date is ' + today;
+    }
+}).mount('#ej6')

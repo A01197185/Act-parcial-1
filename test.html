@@ -1,0 +1,47 @@
+<script src="https://unpkg.com/vue@3"></script>
+
+<div id="app">
+    <h3>List of pendings</h3>
+    <ul>
+        <li v-for="task in filteredTasks" :key="task.id">
+            <input type="checkbox" v-model="task.done">
+            <span :class="{ done: task.done }">{{ task.text }}</span>
+        </li>
+    </ul>
+    <button @click="toogleHideCompleted">
+        {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+    </button>
+    <p> {{cntr}} </p>
+</div>
+
+<style>
+    .done { text-decoration: line-through; }
+</style>
+
+<script>
+    let id = 0;
+    Vue.createApp({
+        data(){
+            return {
+                hideCompleted: false,
+                tasks: [
+                    { id: id++, text: 'Learn HTML', done: false },
+                    { id: id++, text: 'Learn JavaScript', done: false },
+                    { id: id++, text: 'Learn Botstrap', done: false },
+                    { id: id++, text: 'Learn Vue.Js', done: false } ]
+            }
+        },
+        methods: {
+            toogleHideCompleted(){
+                this.hideCompleted = !this.hideCompleted
+            }
+        },
+        computed: {
+            filteredTasks() {
+                return this.hideCompleted
+                    ? this.tasks.filter((t) => !t.done)
+                    : this.tasks
+            }
+        },
+    }).mount('#app')
+</script>
