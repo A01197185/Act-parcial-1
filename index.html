@@ -19,19 +19,19 @@
                 <div class="row">
                     <div class="col-3">
                         <!-- Norte America -->
-                        <button class="btn btn-primary" v-on:click="rnA()">{{ r1 }}</button>
+                        <button class="btn btn-primary" v-on:click="rNA">{{r1}} - {{cntNA}}</button>
                     </div>
                     <div class="col-3">
                         <!-- Europa -->
-                        <button class="btn btn-primary" v-on:click="europa = !europa">{{r2}}</button>
+                        <button class="btn btn-primary" v-on:click="rEU">{{r2}} - {{cntEU}}</button>
                     </div>
                     <div class="col-3">
                         <!-- Asia -->
-                        <button class="btn btn-primary" v-on:click="asia = !asia">{{r3}}</button>
+                        <button class="btn btn-primary" v-on:click="rAS">{{r3}} - {{cntAS}}</button>
                     </div>
                     <div class="col-3">
                         <!-- Oceania -->
-                        <button class="btn btn-primary" v-on:click="oceania = !oceania">{{r4}}</button>
+                        <button class="btn btn-primary" v-on:click="rOC">{{r4}} - {{cntOC}}</button>
                     </div>
                 </div>
                 <div class="row">
@@ -44,8 +44,8 @@
                         </ol>
                     </div>
                     <div class="col-3">
-                        <p v-if="europa">This is a list of countries in {{r2}}</p>
-                        <ol v-if="europa">
+                        <p v-if="europe">This is a list of countries in {{r2}}</p>
+                        <ol v-if="europe">
                         <li v-for="msg in bucl2">
                         {{ msg.paises }}
                         </li>
